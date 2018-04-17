@@ -100,10 +100,7 @@ module Opal
       end
 
       def required_trees
-        compiled.required_trees.map do |tree|
-          # Remove any leading ./ after joining to dirname
-          File.join(File.dirname(@filename), tree).sub(%r{^(\./)*}, '')
-        end
+        compiled.required_trees
       end
 
       # Also catch a files with missing extensions and nil.
